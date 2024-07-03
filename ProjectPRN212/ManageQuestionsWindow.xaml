@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProjectPRN212.ManageQuestionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPRN212"
+        mc:Ignorable="d"
+         Title="Quản lý câu hỏi" WindowStartupLocation="CenterScreen" Background="#FFEEEEEE" WindowState="Maximized">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Quản lý câu hỏi" FontSize="24" FontWeight="Bold" Foreground="#FF333333" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <DataGrid x:Name="dataGridQuestions" AutoGenerateColumns="False" Width="800" Height="300" Margin="0,0,0,20">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="QuestionID" Binding="{Binding QuestionId}" Width="100"/>
+                    <DataGridTextColumn Header="QuestionText" Binding="{Binding QuestionText}" Width="300"/>
+                    <DataGridTextColumn Header="OptionA" Binding="{Binding OptionA}" Width="100"/>
+                    <DataGridTextColumn Header="OptionB" Binding="{Binding OptionB}" Width="100"/>
+                    <DataGridTextColumn Header="OptionC" Binding="{Binding OptionC}" Width="100"/>
+                    <DataGridTextColumn Header="OptionD" Binding="{Binding OptionD}" Width="100"/>
+                    <DataGridTextColumn Header="CorrectOption" Binding="{Binding CorrectOption}" Width="100"/>
+                    <DataGridTextColumn Header="ImagePath" Binding="{Binding ImagePath}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                <Button Content="Thêm câu hỏi" Width="150" Height="40" Background="#FF00CC66" Foreground="White" Margin="0,0,10,0" Click="AddQuestion_Click"/>
+                <Button Content="Chỉnh sửa câu hỏi" Width="150" Height="40" Background="#FF008CBA" Foreground="White" Margin="0,0,10,0" Click="EditQuestion_Click"/>
+                <Button Content="Xóa câu hỏi" Width="150" Height="40" Background="#FFCC0000" Foreground="White" Click="DeleteQuestion_Click"/>
+            </StackPanel>
+
+            <Button Content="Quay lại" Width="300" Height="40" Background="#FFBDBDBD" Foreground="White" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

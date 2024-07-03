@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProjectPRN212.ViewHistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectPRN212"
+        mc:Ignorable="d"
+        Title="Xem lịch sử thi" WindowStartupLocation="CenterScreen" Background="#FFEEEEEE" WindowState="Maximized">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Lịch sử thi" FontSize="24" FontWeight="Bold" Foreground="#FF333333" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <DataGrid x:Name="dataGridHistory" AutoGenerateColumns="False" Width="800" Height="300" Margin="0,0,0,20" SelectionChanged="DataGridHistory_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ExamId" Binding="{Binding ExamId}" Width="100"/>
+                    <DataGridTextColumn Header="ExamDate" Binding="{Binding ExamDate}" Width="200"/>
+                    <DataGridTextColumn Header="Score" Binding="{Binding Score}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBlock Text="Chi tiết bài thi" FontSize="20" FontWeight="Bold" Foreground="#FF333333" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <DataGrid x:Name="dataGridExamDetails" AutoGenerateColumns="False" Width="800" Height="300" Margin="0,0,0,20">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="QuestionId" Binding="{Binding QuestionId}" Width="100"/>
+                    <DataGridTextColumn Header="QuestionText" Binding="{Binding QuestionText}" Width="300"/>
+                    <DataGridTextColumn Header="UserAnswer" Binding="{Binding UserAnswer}" Width="100"/>
+                    <DataGridTextColumn Header="IsCorrect" Binding="{Binding IsCorrect}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Content="Quay lại" Width="300" Height="40" Background="#FFBDBDBD" Foreground="White" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
